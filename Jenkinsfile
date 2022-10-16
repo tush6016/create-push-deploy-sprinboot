@@ -36,9 +36,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    sh 'mkdir tushar'
-                    sh 'mkdir tush'
-                    sh 'shrav'
+                    sh 'mkdir shrav'
                 }
             }
         }
