@@ -4,7 +4,7 @@ pipeline {
     }
     agent any
     environment {
-          132271831471.dkr.ecr.us-east-2.amazonaws.com/dev-engg-tushar    
+        registry = "132271831471.dkr.ecr.us-east-2.amazonaws.com/dev-engg-tushar"    
     }
 
     stages {
