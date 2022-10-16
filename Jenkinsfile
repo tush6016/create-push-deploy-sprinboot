@@ -37,8 +37,8 @@ pipeline {
             steps {
                 script {
                     sh 'mkdir tushar'
-                    sh mkdir 'prec'
-                    }
+                    sh 'mkdir tush'
+                    sh 'shrav'
                 }
             }
         }
