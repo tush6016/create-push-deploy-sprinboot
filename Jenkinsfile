@@ -4,7 +4,7 @@ pipeline {
     }
     agent any
     environment {
-        registry = "132271831471.dkr.ecr.us-east-2.amazonaws.com/dev-engg-tushar"    
+        registry = "318336405776.dkr.ecr.ap-south-1.amazonaws.com/production-repos"    
     }
 
     stages {
@@ -28,15 +28,8 @@ pipeline {
         stage('Push to ECR') {
             steps {
                 script {
-                    sh 'aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 132271831471.dkr.ecr.us-east-2.amazonaws.com'
-                    sh 'docker push 132271831471.dkr.ecr.us-east-2.amazonaws.com/dev-engg-tushar:latest'
-                }
-            }
-        }
-        stage('Deploy') {
-            steps {
-                script {
-                    sh 'mkdir shrav'
+                    sh 'aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 318336405776.dkr.ecr.ap-south-1.amazonaws.com'
+                    sh 'docker push 318336405776.dkr.ecr.ap-south-1.amazonaws.com/production-repos:latest'
                 }
             }
         }
