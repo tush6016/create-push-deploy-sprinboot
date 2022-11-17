@@ -2,7 +2,7 @@ pipeline {
     tools {
         maven 'Maven3'
     }
-    agent any
+    agent {label 'eks'}
     environment {
         registry = "132271831471.dkr.ecr.us-east-2.amazonaws.com/kamblets"    
     }
