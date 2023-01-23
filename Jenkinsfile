@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('clone git') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/tush6016/springboot-app.git']]])
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/tush6016/create-push-deploy-sprinboot.git']])
             }
         }
         stage('build Image') {
