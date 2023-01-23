@@ -4,7 +4,7 @@ pipeline {
     }
     agent {label 'eks'}
     environment {
-        registry = "132271831471.dkr.ecr.us-east-2.amazonaws.com/kamblets"    
+        registry = "318336405776.dkr.ecr.us-west-2.amazonaws.com/aaaa"    
     }
 
     stages {
@@ -28,8 +28,8 @@ pipeline {
         stage('Push to ECR') {
             steps {
                 script {
-                    sh 'aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 132271831471.dkr.ecr.us-east-2.amazonaws.com'
-                    sh 'docker push 132271831471.dkr.ecr.us-east-2.amazonaws.com/kamblets:latest'
+                    sh 'aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 318336405776.dkr.ecr.us-west-2.amazonaws.com'
+                    sh 'docker push 318336405776.dkr.ecr.us-west-2.amazonaws.com/aaaa:latest'
                 }
             }
         }
